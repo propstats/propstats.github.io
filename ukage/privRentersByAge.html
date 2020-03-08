@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="679deb9a-5273-4457-9bb4-c278734da485" data-root-id="38970"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="39780">
+          {"116829c2-f413-48e5-9e67-80bd3f21ad05":{"roots":{"references":[{"attributes":{"below":[{"id":"38981","type":"LinearAxis"}],"center":[{"id":"38985","type":"Grid"},{"id":"38990","type":"Grid"},{"id":"39007","type":"Legend"},{"id":"39011","type":"LabelSet"}],"left":[{"id":"38986","type":"LinearAxis"}],"plot_height":350,"renderers":[{"id":"39000","type":"GlyphRenderer"}],"title":{"id":"38971","type":"Title"},"toolbar":{"id":"38992","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"38973","type":"Range1d"},"x_scale":{"id":"38977","type":"LinearScale"},"y_range":{"id":"38975","type":"DataRange1d"},"y_scale":{"id":"38979","type":"LinearScale"}},"id":"38970","subtype":"Figure","type":"Plot"},{"attributes":{"label":{"field":"Age"},"renderers":[{"id":"39000","type":"GlyphRenderer"}]},"id":"39008","type":"LegendItem"},{"attributes":{},"id":"39615","type":"UnionRenderers"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"38991","type":"HoverTool"}]},"id":"38992","type":"Toolbar"},{"attributes":{"items":[{"id":"39008","type":"LegendItem"}]},"id":"39007","type":"Legend"},{"attributes":{},"id":"39616","type":"Selection"},{"attributes":{"grid_line_color":null,"ticker":{"id":"38982","type":"BasicTicker"}},"id":"38985","type":"Grid"},{"attributes":{"data_source":{"id":"38996","type":"ColumnDataSource"},"glyph":{"id":"38998","type":"Wedge"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"38999","type":"Wedge"},"selection_glyph":null,"view":{"id":"39001","type":"CDSView"}},"id":"39000","type":"GlyphRenderer"},{"attributes":{"axis_label":null,"formatter":{"id":"39004","type":"BasicTickFormatter"},"ticker":{"id":"38987","type":"BasicTicker"},"visible":false},"id":"38986","type":"LinearAxis"},{"attributes":{"dimension":1,"grid_line_color":null,"ticker":{"id":"38987","type":"BasicTicker"}},"id":"38990","type":"Grid"},{"attributes":{},"id":"38987","type":"BasicTicker"},{"attributes":{"callback":null,"start":-0.5},"id":"38973","type":"Range1d"},{"attributes":{"end_angle":{"expr":{"id":"38995","type":"CumSum"},"units":"rad"},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"radius":{"units":"data","value":0.4},"start_angle":{"expr":{"id":"38994","type":"CumSum"},"units":"rad"},"x":{"value":0},"y":{"value":1}},"id":"38999","type":"Wedge"},{"attributes":{"field":"angle"},"id":"38995","type":"CumSum"},{"attributes":{"callback":null,"tooltips":"@Age: @value"},"id":"38991","type":"HoverTool"},{"attributes":{},"id":"39617","type":"UnionRenderers"},{"attributes":{"angle":{"expr":{"id":"39010","type":"CumSum"},"units":"rad"},"source":{"id":"39009","type":"ColumnDataSource"},"text":{"field":"label"},"x":{"value":0},"y":{"value":1}},"id":"39011","type":"LabelSet"},{"attributes":{"field":"angle","include_zero":true},"id":"39010","type":"CumSum"},{"attributes":{"callback":null},"id":"38975","type":"DataRange1d"},{"attributes":{"axis_label":null,"formatter":{"id":"39006","type":"BasicTickFormatter"},"ticker":{"id":"38982","type":"BasicTicker"},"visible":false},"id":"38981","type":"LinearAxis"},{"attributes":{"text":"Private Renters by Age Group"},"id":"38971","type":"Title"},{"attributes":{},"id":"38982","type":"BasicTicker"},{"attributes":{"end_angle":{"expr":{"id":"38995","type":"CumSum"},"units":"rad"},"fill_color":{"field":"color"},"line_color":{"value":"white"},"radius":{"units":"data","value":0.4},"start_angle":{"expr":{"id":"38994","type":"CumSum"},"units":"rad"},"x":{"value":0},"y":{"value":1}},"id":"38998","type":"Wedge"},{"attributes":{"source":{"id":"38996","type":"ColumnDataSource"}},"id":"39001","type":"CDSView"},{"attributes":{},"id":"39004","type":"BasicTickFormatter"},{"attributes":{},"id":"38977","type":"LinearScale"},{"attributes":{},"id":"38979","type":"LinearScale"},{"attributes":{},"id":"39006","type":"BasicTickFormatter"},{"attributes":{},"id":"39614","type":"Selection"},{"attributes":{"callback":null,"data":{"Age":["16-24","25-34","35-44","45-54","55-64","65 or over"],"angle":{"__ndarray__":"QdqPCqtL5j+qhbjVWgf+P4WHhthdNvo/pq2iLL/u7j8a3F0NrnriP1vqEgFR3+A/","dtype":"float64","shape":[6]},"color":["#c6dbef","#9ecae1","#6baed6","#3182bd","#fd8d3c","#e6550d"],"index":[0,1,2,3,4,5],"value":{"__ndarray__":"MzMzMzMzJkBmZmZmZuY9QJqZmZmZGTpAzczMzMzMLkBmZmZmZmYiQM3MzMzMzCBA","dtype":"float64","shape":[6]}},"selected":{"id":"39614","type":"Selection"},"selection_policy":{"id":"39615","type":"UnionRenderers"}},"id":"38996","type":"ColumnDataSource"},{"attributes":{"callback":null,"data":{"Age":["16-24","25-34","35-44","45-54","55-64","65 or over"],"angle":{"__ndarray__":"QdqPCqtL5j+qhbjVWgf+P4WHhthdNvo/pq2iLL/u7j8a3F0NrnriP1vqEgFR3+A/","dtype":"float64","shape":[6]},"color":["#c6dbef","#9ecae1","#6baed6","#3182bd","#fd8d3c","#e6550d"],"index":[0,1,2,3,4,5],"label":["                         11.1%","                         29.9%","                         26.1%","                         15.4%","                          9.2%","                          8.4%"],"value":{"__ndarray__":"MzMzMzMzJkBmZmZmZuY9QJqZmZmZGTpAzczMzMzMLkBmZmZmZmYiQM3MzMzMzCBA","dtype":"float64","shape":[6]}},"selected":{"id":"39616","type":"Selection"},"selection_policy":{"id":"39617","type":"UnionRenderers"}},"id":"39009","type":"ColumnDataSource"},{"attributes":{"field":"angle","include_zero":true},"id":"38994","type":"CumSum"}],"root_ids":["38970"]},"title":"Bokeh Application","version":"1.4.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('39780').textContent;
+                  var render_items = [{"docid":"116829c2-f413-48e5-9e67-80bd3f21ad05","roots":{"38970":"679deb9a-5273-4457-9bb4-c278734da485"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
