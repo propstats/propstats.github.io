@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        
+<script type="text/javascript">
+function getUrl() {
+   loc=document.getElementById('loc');
+   lc=loc.options[loc.selectedIndex].value; 
+   rettype=document.getElementById('rettype');
+   rt=rettype.options[rettype.selectedIndex].value;
+
+   url = 'https://propstats.github.io/stocksorhousing/sphouse/'+rt+'_'+lc+'.html';     
+
+   document.getElementById('myIFrame').setAttribute('src', url);           
+};
+</script>        
+</head>
+<body>   
+<frameset rows="5%,*">
+	<frame scrolling=no frameborder=0>
+	<form>
+	<div class="form-row" style="width:100%;height:40px" align="center">
+	    <div class="col">
+		<select id='loc' class="form-control form-control-sm" name='loc' onchange="getUrl()">
+			<option value='USNational'>U.S. National</option>
+			<option value='10CityComposite'>10-City Composite</option>
+			<option value='20CityComposite'>20-City Composite</option>
+			<option value='AZPhoenix'>AZ-Phoenix</option>
+			<option value='CALosAngeles'>CA-Los Angeles</option>
+			<option value='CASanDiego'>CA-San Diego</option>
+			<option value='CASanFrancisco'>CA-San Francisco</option>
+			<option value='CODenver'>CO-Denver</option>
+			<option value='DCWashington'>DC-Washington</option>
+			<option value='FLMiami'>FL-Miami</option>
+			<option value='FLTampa'>FL-Tampa</option>
+			<option value='GAAtlanta'>GA-Atlanta</option>
+			<option value='ILChicago'>IL-Chicago</option>
+			<option value='MABoston'>MA-Boston</option>
+			<option value='MIDetroit'>MI-Detroit</option>
+			<option value='MNMinneapolis'>MN-Minneapolis</option>
+			<option value='NCCharlotte'>NC-Charlotte</option>
+			<option value='NVLasVegas'>NV-Las Vegas</option>
+			<option value='NYNewYork'>NY-New York</option>
+			<option value='OHCleveland'>OH-Cleveland</option>
+			<option value='ORPortland'>OR-Portland</option>
+			<option value='TXDallas'>TX-Dallas</option>
+			<option value='WASeattle'>WA-Seattle</option>"				
+		</select>        
+	    </div>
+	    <div class="col">
+		<select id='rettype' class="form-control form-control-sm" name='rettype' onchange="getUrl()">
+			<option value='capdiv'>Capital + Income</option>
+			<option value='cap'>Capital Only</option>
+			<option value='reinv'>Capital + Income Reinvested</option>
+			<option value='levcap'>Leveraged Capital Only</option>
+			<option value='levtotal'>Leveraged Capital + Income</option>
+			<option value='levhousing'>Only Leveraged Housing Capital + Income</option>
+		</select>
+	   </div>
+	</div>
+	</form>   
+	</frame>
+	<frame scrolling=no frameborder=0>     
+	<div class="embed-responsive embed-responsive-1by1" style="height:600px;width:100%;" align="center">        
+	<iframe id="myIFrame" class="embed-responsive-item" frameborder="0" scrolling="no" style="height:100%;width:100%;"></iframe>
+	</div> 
+	</frame>
+</frameset>       
+<script type="text/javascript"> 
+
+getUrl();
+var resizeIFrame = function(event) {
+    var loc = document.location;
+    if (event.origin != loc.protocol + '//' + loc.host) return;
+
+    var myIFrame = document.getElementById('myIFrame');
+    if (myIFrame) {
+        myIFrame.style.height = event.data.h + "px";
+        myIFrame.style.width  = event.data.w + "px";
+    }
+};
+if (window.addEventListener) {
+    window.addEventListener("message", resizeIFrame, false);
+} else if (window.attachEvent) {
+    window.attachEvent("onmessage", resizeIFrame);
+}
+</script>
+</body>
+</html>
