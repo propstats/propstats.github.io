@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<title>Propstats - Mobility Changes Related to the Pandemic</title>
+<link rel="icon" href="icon.png"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">      
+
+<script type="text/javascript">
+function getUrl() {
+   citySel=document.getElementById('city');
+   placeSel=document.getElementById('place');
+   city=citySel.options[citySel.selectedIndex].value;
+   place=placeSel.options[placeSel.selectedIndex].value;
+   mapBaseUrl="cities_base_map/"+city+"_"+place+".png";
+   mapChangeUrl="cities_change_map/"+city+"_"+place+".png";   
+   chartUrl="cities_base_chart/"+city+"_"+place+"_base.html";
+   //url = 'file:///home/rahul/dev/propstats/pums/output/usa_ryield_'+st+'.html';     
+   document.getElementById('mapBaseFrame').setAttribute('src', mapBaseUrl);
+   document.getElementById('chartFrame').setAttribute('src', chartUrl);
+    document.getElementById('mapChangeFrame').setAttribute('src', mapChangeUrl);
+};
+</script>        
+</head>
+<body>   
+<div class="container-fluid">
+<form>
+<div class="form-row" style="width:100%;height:5%" align="center">
+    <div class="col">
+        <select id='city' class="form-control form-control-sm" name='state' onchange="getUrl()">
+            <option value="Albuquerque">Albuquerque, NM</option><option value="Anchorage">Anchorage, AK</option><option value="Atlanta">Atlanta, GA</option><option value="Austin">Austin, TX</option><option value="Baltimore">Baltimore, MD</option><option value="Boise_City">Boise City, ID</option><option value="Boston">Boston, MA--NH--RI</option><option value="Buffalo">Buffalo, NY</option><option value="Charlotte">Charlotte, NC--SC</option><option value="Chicago">Chicago, IL--IN</option><option value="Cincinnati">Cincinnati, OH--KY--IN</option><option value="Cleveland">Cleveland, OH</option><option value="Columbus">Columbus, OH</option><option value="Dallas">Dallas--Fort Worth--Arlington, TX</option><option value="Denver">Denver--Aurora, CO</option><option value="Des_Moines">Des Moines, IA</option><option value="Detroit">Detroit, MI</option><option value="El_Paso">El Paso, TX--NM</option><option value="Fresno">Fresno, CA</option><option value="Houston">Houston, TX</option><option value="Indianapolis">Indianapolis, IN</option><option value="Jacksonville">Jacksonville, FL</option><option value="Kansas_City">Kansas City, MO--KS</option><option value="Las_Vegas">Las Vegas--Henderson, NV</option><option value="Los_Angeles">Los Angeles--Long Beach--Anaheim, CA</option><option value="Louisville">Louisville/Jefferson County, KY--IN</option><option value="Memphis">Memphis, TN--MS--AR</option><option value="Miami">Miami, FL</option><option value="Milwaukee">Milwaukee, WI</option><option value="Minneapolis">Minneapolis--St. Paul, MN--WI</option><option value="Nashville">Nashville-Davidson, TN</option><option value="New_Orleans">New Orleans, LA</option><option value="New_York">New York--Newark, NY--NJ--CT</option><option value="Oklahoma_City">Oklahoma City, OK</option><option value="Omaha">Omaha, NE--IA</option><option value="Orlando">Orlando, FL</option><option value="Philadelphia">Philadelphia, PA--NJ--DE--MD</option><option value="Phoenix">Phoenix--Mesa, AZ</option><option value="Pittsburgh">Pittsburgh, PA</option><option value="Portland">Portland, OR--WA</option><option value="Raleigh">Raleigh, NC</option><option value="Rochester">Rochester, NY</option><option value="Sacramento">Sacramento, CA</option><option value="Salt_Lake_City">Salt Lake City--West Valley City, UT</option><option value="San_Antonio">San Antonio, TX</option><option value="San_Diego">San Diego, CA</option><option value="San_Francisco">San Francisco--Oakland, CA</option><option value="San_Jose">San Jose, CA</option><option value="Seattle">Seattle, WA</option><option value="St._Louis">St. Louis, MO--IL</option><option value="Tampa">Tampa--St. Petersburg, FL</option><option value="Tucson">Tucson, AZ</option><option value="Tulsa">Tulsa, OK</option><option value="Washington">Washington, DC--VA--MD</option><option value="Wichita">Wichita, KS</option>
+       	</select>        
+    <div>
+<div>
+ 
+<div class="form-row" style="width:100%;height:5%" align="center">    
+    <div class="col">       	
+       	<select id='place' class="form-control form-control-sm" name='state' onchange="getUrl()">
+            <option value="grocery">Grocery Stores & Pharmacies</option><option value="parks">Parks</option><option value="residential">Residences</option><option value="retail">Retail & Recreation Venues</option><option value="transit">Public Transit Stations</option><option value="workplaces">Workplaces</option>       	
+        </select>
+    </div>
+</div>
+</form>
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item">The first map shows %change in mobility since the beginning of the pandemic
+            <li class="list-group-item">The second map shows %change in mobility since last year
+            <li class="list-group-item">The graph shows changes since the beginning of the pandemic
+        </ul>
+    </div>
+</div>                
+
+<div class="row"> 
+    <div class="col-sm">
+    <img id="mapBaseFrame" class="img-responsive"/>        
+    </div>
+</div>
+<div class="row"> 
+    <div class="col-sm">
+    <img id="mapChangeFrame" class="img-responsive"/>        
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="embed-responsive embed-responsive-1by1"> 
+            <iframe id="chartFrame" class="embed-responsive-item" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript"> 
+document.getElementById('city').value='New_York';
+document.getElementById('place').value='retail';
+
+getUrl();
+var resizeIFrame = function(event) {
+    var loc = document.location;
+    if (event.origin != loc.protocol + '//' + loc.host) return;
+
+    var myIFrame = document.getElementById('myIFrame');
+    if (myIFrame) {
+        myIFrame.style.height = event.data.h + "px";
+        myIFrame.style.width  = event.data.w + "px";
+    }
+};
+if (window.addEventListener) {
+    window.addEventListener("message", resizeIFrame, false);
+} else if (window.attachEvent) {
+    window.attachEvent("onmessage", resizeIFrame);
+}
+</script>
+</body>
+</html>
